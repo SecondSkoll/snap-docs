@@ -20,7 +20,7 @@ RUN_IDS=$(gh run list \
 
 DOWNLOAD_SUCCESS=false
 
-gh run download "22216785446" -R "${REPO}" -n "${ARTIFACT_NAME}" -D "${TARGET_DIR}"
+gh run download "22216785446" -R "${REPO}" -n "${ARTIFACT_NAME}" -D "${TARGET_DIR}" && DOWNLOAD_SUCCESS=true
 
 if [ "$DOWNLOAD_SUCCESS" = false ]; then
   echo "Error: You made a mistake. :( '${ARTIFACT_NAME}'."
